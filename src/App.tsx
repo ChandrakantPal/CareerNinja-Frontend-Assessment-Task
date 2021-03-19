@@ -1,10 +1,17 @@
+import { Route, Switch } from 'react-router'
+import Game from './components/Game'
+import PickSide from './components/PickSide'
+import SelectOpponent from './components/SelectOpponent'
+
 const App = () => {
   return (
-    <div className="container mx-auto">
-      <div className="w-full h-full">
-        <h1 className="text-4xl text-center">Hello</h1>
-      </div>
-    </div>
+    <>
+      <Switch>
+        <Route path="/game" component={Game} />
+        <Route path="/side" component={PickSide} />
+        <Route path="/" exact component={SelectOpponent} />
+      </Switch>
+    </>
   )
 }
 
